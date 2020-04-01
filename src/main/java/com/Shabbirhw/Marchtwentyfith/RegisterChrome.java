@@ -21,6 +21,7 @@ public class RegisterChrome {
         String pagetitle = driver.getTitle();
         System.out.println(pagetitle);
 
+
         WebElement emailInput = driver.findElement(By.id("customer.emailAddress"));
         emailInput.clear();
         System.out.println("Email Input field is cleared ");

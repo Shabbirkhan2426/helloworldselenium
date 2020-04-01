@@ -16,6 +16,7 @@ public class RegisSafari {
     public static void register()throws Exception{
 
         WebDriver driver = new SafariDriver();
+        driver.manage().window().fullscreen();
         driver.navigate().to("https://demo.broadleafcommerce.org/login");
         String pagetitle = driver.getTitle();
         System.out.println(pagetitle);
@@ -58,8 +59,9 @@ public class RegisSafari {
         WebElement register1 = driver.findElement(By.xpath("//*[@id=\"registrationForm\"]/button"));
         register1.click();
         System.out.println("Clicked on Register button");
+        Thread.sleep(5000);
 
-        //driver.quit
+        driver.quit();
 
 
     }
