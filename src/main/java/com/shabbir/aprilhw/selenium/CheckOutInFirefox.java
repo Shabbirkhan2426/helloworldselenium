@@ -3,26 +3,21 @@ package com.shabbir.aprilhw.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.concurrent.TimeUnit;
-
-public class CheckoutProduct {
+public class CheckOutInFirefox {
 
     public static void main(String[] args)throws Exception {
 
-        payproduct();
-
+        productcheckout();
 
     }
 
-    public static void payproduct()throws Exception{
+    public static void productcheckout()throws Exception{
 
-        System.setProperty("webdriver.chrome.driver","/Users/shabbirkhan/projects/drivers/chromedriver");
-        WebDriver driver =  new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.manage().window().fullscreen();
+        System.setProperty("webdriver.gecko.driver","/Users/shabbirkhan/projects/drivers/geckodriver");
+        WebDriver driver = new FirefoxDriver();
         driver.navigate().to("https://demo.broadleafcommerce.org/login");
         String pagetitle = driver.getTitle();
         System.out.println(pagetitle);
@@ -126,15 +121,15 @@ public class CheckoutProduct {
         System.out.println("Continue button is clicked from Checkout Shipping information page ");
         Thread.sleep(5000);
 
-        /*WebElement sshippinadd =driver.findElement(By.xpath("(//span[@class='check'])[1]"));
-        sshippinadd.click();
-        System.out.println("Same as shipping address checkbox is clicked ");
-        Thread.sleep(5000);*/
-
         WebElement cardinfo = driver.findElement(By.xpath("(//div[@class ='card-content'])[1]"));
         cardinfo.click();
         System.out.println("Card informaiton is selected");
         Thread.sleep(4000);
+
+        /*WebElement sshippinadd =driver.findElement(By.xpath("(//span[@class='check'])[1]"));
+        sshippinadd.click();
+        System.out.println("Same as shipping address checkbox is clicked ");
+        Thread.sleep(5000);*/
 
         WebElement cbutton = driver.findElement(By.partialLinkText("NUE"));
         cbutton.click();

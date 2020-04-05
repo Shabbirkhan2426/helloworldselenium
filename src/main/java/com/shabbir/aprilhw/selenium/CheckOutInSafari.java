@@ -3,25 +3,20 @@ package com.shabbir.aprilhw.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.concurrent.TimeUnit;
+public class CheckOutInSafari {
 
-public class CheckoutProduct {
+    public static void main(String[] args) throws Exception {
 
-    public static void main(String[] args)throws Exception {
-
-        payproduct();
-
+        checout();
 
     }
 
-    public static void payproduct()throws Exception{
+    public static void checout()throws Exception{
 
-        System.setProperty("webdriver.chrome.driver","/Users/shabbirkhan/projects/drivers/chromedriver");
-        WebDriver driver =  new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        WebDriver driver = new SafariDriver();
         driver.manage().window().fullscreen();
         driver.navigate().to("https://demo.broadleafcommerce.org/login");
         String pagetitle = driver.getTitle();
@@ -51,7 +46,8 @@ public class CheckoutProduct {
         System.out.println("Clicked on Green Ghost link");
         Thread.sleep(5000);
 
-        WebElement addbutton = driver.findElement(By.xpath("//button[@class ='btn btn-primary js-addToCart']"));
+       //WebElement addbutton = driver.findElement(By.xpath("//button[@class ='btn btn-primary js-addToCart']"));
+        WebElement addbutton = driver.findElement(By.linkText("ADD TO CART"));
         addbutton.click();
         System.out.println("Clicked on add button");
         Thread.sleep(5000);
@@ -126,6 +122,7 @@ public class CheckoutProduct {
         System.out.println("Continue button is clicked from Checkout Shipping information page ");
         Thread.sleep(5000);
 
+
         /*WebElement sshippinadd =driver.findElement(By.xpath("(//span[@class='check'])[1]"));
         sshippinadd.click();
         System.out.println("Same as shipping address checkbox is clicked ");
@@ -151,12 +148,9 @@ public class CheckoutProduct {
         System.out.println("Confirmation page is printed  ");
         Thread.sleep(5000);
 
-        //(//a[@class='btn btn-primary pull-right js-performCheckout'])[1]
-
-        //div[@class='card confirmation-card']
-
 
         driver.quit();
+
 
     }
 }

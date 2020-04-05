@@ -1,0 +1,15 @@
+Udemy
+
+//the main use of constructor is to initialize the variable
+
+
+// Constructors have same name as of class Name
+
+//Constructor are basically used to initialize instance  variable of the class at the time of object creation
+
+// Constructor does not have any return type but method or fucntio can have return type
+
+//Difrerent type of constructor
+1. Default
+2. no- arg
+3.parameritized
