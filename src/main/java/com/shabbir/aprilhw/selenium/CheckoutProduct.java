@@ -51,7 +51,7 @@ public class CheckoutProduct {
         System.out.println("Clicked on Green Ghost link");
         Thread.sleep(5000);
 
-        WebElement addbutton = driver.findElement(By.xpath("//button[@class ='btn btn-primary js-addToCart']"));
+        WebElement addbutton = driver.findElement(By.xpath("//button[@class='btn btn-primary js-addToCart']"));
         addbutton.click();
         System.out.println("Clicked on add button");
         Thread.sleep(5000);

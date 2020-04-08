@@ -1,0 +1,39 @@
+
+TDD-Test Driven Devolpment
+
+
+Purpose-Design test cases in a systemic way
+--html reports
+--different annotation
+--priorities/sequence
+---Dependency
+---grouping
+---Data provider
+Testng-open soure, free
+Jar files
+
+---Java unit testing framework
+
+
+
+--There are 3 different conditon/annotation  in TestNg class
+1.Precondition
+2.Test
+3.Postcondition
+
+
+
+@BeforeMethod
+@Test-1
+@AfterMehtod
+
+@BeforeMethod
+@Test-2
+@AfterMethod
+
+@BeforeMethod
+@Test-3
+@AfterMethod
+
+
+//IN real time--@beforeclass,@beforeMethod,@Test following @afterMethod and @afterClass
