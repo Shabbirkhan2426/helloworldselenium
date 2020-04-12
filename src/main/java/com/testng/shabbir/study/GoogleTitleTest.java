@@ -3,13 +3,14 @@ package com.testng.shabbir.study;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class GoogleTest {
+public class GoogleTitleTest {
 
     WebDriver driver;
 
@@ -25,44 +26,26 @@ public class GoogleTest {
         driver.get("http://www.google.com");
     }
 
-    @Test(priority = 1,groups="Title")
+    @Test()
     public void googleTitelTest(){
         String title = driver.getTitle();
         System.out.println(title);
-    }
 
-    /*
+        Assert.assertEquals(title,"Google123","title is not match");
+    }
+    /*@Test
     public void googleLogoTest(){
 
-       boolean b= driver.findElement(By.xpath("//img[@id='logo-doodle-image']")).isDisplayed();
-       //img[@id='logo-doodle-image']
+        boolean b= driver.findElement(By.xpath("//button[@id = 'logo-doodle-button']")).isDisplayed();
+        Assert.assertTrue(b);// This is assert true statement validation
+
+        //"//img[@id='logo-doodle-image']"
+        //"//div[@id = 'logo-doodle']"
+        //div[@class ='show-logo']
     }*/
 
-    @Test(priority = 2,groups = "Link Test")
-    public void gmailLinkTest(){
-
-        boolean b = driver.findElement(By.linkText("mail")).isDisplayed();
-    }
-
-    @Test(priority = 3,groups = "Test")
-    public void test1(){
-
-        System.out.println("test1");
-
-    }
-    @Test(priority = 4,groups = "Test")
-    public void test2(){
-
-        System.out.println("test2");
-    }
-    @Test(priority = 5, groups = "Test")
-    public void test3(){
-
-        System.out.println("test3");
-    }
-
     @AfterMethod
-     public void tearDown () {
+    public void tearDown () {
         driver.quit();
     }
 }

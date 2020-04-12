@@ -37,3 +37,5 @@ Jar files
 
 
 //IN real time--@beforeclass,@beforeMethod,@Test following @afterMethod and @afterClass
+
+Assertion is kind of validation
