@@ -2,8 +2,7 @@ package com.shabbir.aprilhw.pageObject;
 
 import org.testng.annotations.Test;
 
-public class HomePageTest extends BaseTestClass {
-
+public class ShippingInfoTestPage extends BaseTestClass {
 
     @Test(priority = 0)
     public void homeTest()throws Exception{
@@ -23,5 +22,12 @@ public class HomePageTest extends BaseTestClass {
 
     }
 
+    @Test(priority = 2)
+    public void shippingTest() throws InterruptedException {
 
+        System.out.println("Verification item: ============");
+        shippproduct.shipping("Checkout");
+        System.out.println("========= Assertion Passed for Checkout ======");
+
+    }
 }

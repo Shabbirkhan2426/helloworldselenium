@@ -78,7 +78,7 @@ public class LogInPage extends BasePage {
     }
 
     //Registrer Method
-    public void registrationPage(String expectedString) throws Exception{
+    /*public void registrationPage(String expectedString) throws Exception{
 
         clickOnElement(loginLink1);
         System.out.println("Login Link clicked!!! ");
@@ -101,6 +101,6 @@ public class LogInPage extends BasePage {
 
 
         
-    }
+    }*/
 
 }

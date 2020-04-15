@@ -1,5 +1,6 @@
 package com.shabbir.aprilhw.pageObject;
 
+import com.shabbir.aprilhw.selenium.CheckoutProduct;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,8 @@ public class BaseTestClass {
 
     protected LogInPage logInPage;
     protected HomePage homePage;
+    protected ShippingInfoPage shippproduct;
+    protected CheckOutPage checkouttopurchase;
     private WebDriver driver;
 
     public BaseTestClass(){
@@ -23,6 +26,8 @@ public class BaseTestClass {
         initilization();
         logInPage = new LogInPage(driver);
         homePage = new HomePage(driver);
+        shippproduct = new ShippingInfoPage(driver);
+        checkouttopurchase= new CheckOutPage(driver);
 
 
     }

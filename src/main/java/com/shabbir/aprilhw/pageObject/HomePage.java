@@ -14,6 +14,7 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+
     }
 
     //Homepage Elements
@@ -24,14 +25,12 @@ public class HomePage extends BasePage{
     WebElement addtoCardLink;
     @FindBy(partialLinkText= "VIEW")
     WebElement viewYourCart;
-    @FindBy(partialLinkText = "CHE")
-    WebElement checkOutlink;
     @FindBy(xpath = "//div[@class = 'col-md-12']")
     WebElement validationStringElement;
 
 
     //Method for Homepage
-    public void home(String expectedString ) throws InterruptedException {
+    public void addProducttoCart(String expectedString ) throws InterruptedException {
 
         clickOnElement(productLink);
         System.out.println("Product Green Ghost  Link is clicked!!! ");
@@ -42,8 +41,6 @@ public class HomePage extends BasePage{
         clickOnElement(viewYourCart);
         System.out.println("View Your Card is  Link clicked!!! ");
 
-        clickOnElement(checkOutlink);
-        System.out.println("CheckOut Link is  clicked!!! ");
         Thread.sleep(5000);
 
         String validationString = validationStringElement.getText();

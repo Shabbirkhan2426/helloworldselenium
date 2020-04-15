@@ -16,10 +16,10 @@ public class LogInPageTest extends BaseTestClass {
 
 
 
-        System.out.println("Homepage Verification item: ============");
+        //System.out.println("Homepage Verification item: ============");
 
-        logInPage.registrationPage("HOME");
-        System.out.println("========= Assertion Passed ======");
+        //logInPage.registrationPage("HOME");
+        //System.out.println("========= Assertion Passed ======");
 
     }
 
