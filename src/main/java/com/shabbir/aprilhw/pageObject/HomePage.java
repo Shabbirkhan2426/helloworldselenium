@@ -25,7 +25,7 @@ public class HomePage extends BasePage{
     WebElement addtoCardLink;
     @FindBy(partialLinkText= "VIEW")
     WebElement viewYourCart;
-    @FindBy(xpath = "//div[@class = 'col-md-12']")
+    @FindBy(linkText = "GREEN GHOST")
     WebElement validationStringElement;
 
 
@@ -42,7 +42,6 @@ public class HomePage extends BasePage{
         System.out.println("View Your Card is  Link clicked!!! ");
 
         Thread.sleep(5000);
-
         String validationString = validationStringElement.getText();
         Assert.assertEquals(validationString,expectedString);
 

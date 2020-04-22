@@ -1,28 +1,29 @@
 package com.shabbir.aprilhw.pageObject;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CheckOutTestPage extends BaseTestClass{
-
-    @Test(priority = 0)
-    public void homeTest()throws Exception{
+    @Parameters({"emailID", "password"})
+    @Test(priority = 1)
+    public void homeTest(String paraID, String paraPass)throws Exception{
 
         System.out.println("Verification item: ============");
-        logInPage.login("My Profile");
+        logInPage.login(paraID,paraPass,"My Profile");
         System.out.println("========= Assertion Passed ======");
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void addproducttoCardTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
-        homePage.addProducttoCart("Shopping Cart");
-        System.out.println("========= Assertion Passed for Shoppping Cart ======");
+        homePage.addProducttoCart("GREEN GHOST");
+        System.out.println("========= Assertion Passed for Green Ghost ======");
 
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void shippingTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
@@ -31,13 +32,14 @@ public class CheckOutTestPage extends BaseTestClass{
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
 
     public void checktest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
-        checkouttopurchase.checkout("Order Confirmation # - 20200414131206198181");
-        System.out.println("========= Assertion Passed for Checkout ======");
+        checkouttopurchase.checkout("A confirmation email will be sent to khanshabb111@gmail.com.");
+        System.out.println("========= Assertion Passed for Confirmation ======");
 
     }
 }
+

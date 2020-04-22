@@ -17,9 +17,9 @@ public class BaseTestClass {
     protected CheckOutPage checkouttopurchase;
     private WebDriver driver;
 
-    public BaseTestClass(){
+   /* public BaseTestClass(){
 
-    }
+    }*/
 
     @BeforeClass
     public void setUpMethod(){

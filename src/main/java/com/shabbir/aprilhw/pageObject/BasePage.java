@@ -25,23 +25,30 @@ public class BasePage {
     //This method clicks on elements
     public void clickOnElement(WebElement element) throws InterruptedException {
         Thread.sleep(2000);
-        drawBorder(element);
+        //drawBorder(element);
         element.click();
     }
 
     //This method types a String a textBox
     public void typeInATextBox(WebElement element, String textToBeEntered){
-        drawBorder(element);
+       // drawBorder(element);
         element.clear();
         element.sendKeys(textToBeEntered);
     }
 
-    public void drawBorder(WebElement element){
+   /* public void drawBorder(WebElement element){
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].style.border='3px solid red'", element);
-    }
-    public void select(Select value){
+    }*/
+    /*public void select(WebElement element){
+        Select select = new Select(element);
+        select.selectByIndex(33);
+        //select.selectByVisibleText("MI");
+    }*/
 
-        value.selectByIndex(33);
+    public void selectValueFromDropdown(WebElement element,String value){
+
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
     }
 }

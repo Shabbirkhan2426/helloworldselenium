@@ -1,28 +1,30 @@
 package com.shabbir.aprilhw.pageObject;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ShippingInfoTestPage extends BaseTestClass {
 
-    @Test(priority = 0)
-    public void homeTest()throws Exception{
+    @Parameters({"emailID", "password"})
+    @Test(priority = 1)
+    public void homeTest(String paraID, String paraPass)throws Exception{
 
         System.out.println("Verification item: ============");
-        logInPage.login("My Profile");
+        logInPage.login(paraID,paraPass,"My Profile");
         System.out.println("========= Assertion Passed ======");
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void addproducttoCardTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
-        homePage.addProducttoCart("Shopping Cart");
+        homePage.addProducttoCart("GREEN GHOST");
         System.out.println("========= Assertion Passed for Shoppping Cart ======");
 
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void shippingTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");

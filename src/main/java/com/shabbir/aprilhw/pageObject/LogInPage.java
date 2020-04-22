@@ -55,13 +55,16 @@ public class LogInPage extends BasePage {
 
 
     //Login Method
-    public void login(String expectedString) throws InterruptedException {
+    public void login(String userID, String pass,String expectedString) throws InterruptedException {
 
         clickOnElement(loginLink);
         System.out.println("Login Link clicked!!! ");
 
-        typeInATextBox(enterEmail, "test@example.com");
-        typeInATextBox(enterPassword, "Test1234");
+        typeInATextBox(enterEmail, userID);
+        typeInATextBox(enterPassword,pass);
+
+        //userid: test@example.com
+        //Pass: Test1234
 
         System.out.println("ID and Password entered!!! ");
         clickOnElement(logInButton);
@@ -69,10 +72,10 @@ public class LogInPage extends BasePage {
         System.out.println("Login button clicked!!!");
 
         clickOnElement(accountLink);
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         String validationString = validationStringElement.getText();
         Assert.assertEquals(validationString, expectedString);
-        clickOnElement(logoutLink);
+        //clickOnElement(logoutLink);
 
 
     }

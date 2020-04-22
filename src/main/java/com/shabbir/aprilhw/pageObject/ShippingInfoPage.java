@@ -1,5 +1,6 @@
 package com.shabbir.aprilhw.pageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,14 +21,16 @@ public class ShippingInfoPage extends BasePage{
     //Shipping WebElements
      @FindBy(partialLinkText = "CHE")
      WebElement checkOutlink;
-     @FindBy(xpath = "(//input[@id = 'fullName'])[1]")
+     @FindBy(xpath  = "(//input[@id = 'fullName'])[1]")
      WebElement enterFullName;
+
+     //"(//input[@id = 'fullName'])[1]"
      @FindBy(xpath = "(//input[@id = 'addressLine1'])[1]")
      WebElement enterAddLine1;
      @FindBy (xpath = "(//input[@id = 'city'])[1]")
      WebElement enterCity;
-     @FindBy (xpath = "stateProvinceRegion")
-     Select selectState;
+     @FindBy (id= "stateProvinceRegion")
+     WebElement selectState;
      @FindBy (xpath = "(//input[@id='postalCode'])[1]")
      WebElement enterPostalCode;
      @FindBy (xpath = "(//input[@id = 'phonePrimary'])[1]")
@@ -49,12 +52,15 @@ public class ShippingInfoPage extends BasePage{
 
         clickOnElement(checkOutlink);
         System.out.println("CheckOut Link is  clicked!!! ");
+        Thread.sleep(3000);
 
         typeInATextBox(enterFullName,"Aff Kh");
         typeInATextBox(enterAddLine1,"123 Agus Dr");
         typeInATextBox(enterCity,"Detroit");
 
-        select(selectState);
+        //select(selectState);
+        //select(selectState,"33");
+        selectValueFromDropdown(selectState,"MI");
 
 
         typeInATextBox(enterPostalCode,"48212");
