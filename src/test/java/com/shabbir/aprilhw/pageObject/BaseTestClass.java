@@ -1,12 +1,15 @@
 package com.shabbir.aprilhw.pageObject;
 
+import com.selenium.exceltestdata.utility.ExcelReader;
 import com.shabbir.aprilhw.selenium.CheckoutProduct;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTestClass {
@@ -16,6 +19,7 @@ public class BaseTestClass {
     protected ShippingInfoPage shippproduct;
     protected CheckOutPage checkouttopurchase;
     private WebDriver driver;
+    static String filePath ="/Users/shabbirkhan/Desktop/Testdata.xlsx";
 
    /* public BaseTestClass(){
 
@@ -51,4 +55,6 @@ public class BaseTestClass {
         driver.get("https://demo.broadleafcommerce.org/");
 
     }
+
+
 }

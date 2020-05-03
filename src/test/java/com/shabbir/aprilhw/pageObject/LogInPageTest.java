@@ -21,3 +21,16 @@ public class LogInPageTest extends BaseTestClass {
 
 
 }
+
+
+    /*@Test
+    public void loginTest(String paraID, String paraPass) throws Exception {
+
+        System.out.println("Login Page Verification items:    ==========");
+
+        logInPage.login(paraID,paraPass,"My Profile");
+
+        System.out.println("========= Assertion Passed ======");
+
+    }
+*/
