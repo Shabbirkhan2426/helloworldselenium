@@ -9,8 +9,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import static com.selenium.exceltestdata.utility.ExcelReader.exclReader;
 
 public class BaseTestClass {
 
@@ -54,6 +57,19 @@ public class BaseTestClass {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://demo.broadleafcommerce.org/");
 
+    }
+
+    @DataProvider(name="shabbir")
+    public Object [][] excelData () throws IOException {
+
+        Object [][] arrayData = exclReader();
+        return arrayData;
+    }
+
+    @DataProvider(name = "Shabbir1")
+    public Object [][] excelData1 () throws IOException {
+        Object [][] arrayData1 = exclReader();
+        return  arrayData1;
     }
 
 

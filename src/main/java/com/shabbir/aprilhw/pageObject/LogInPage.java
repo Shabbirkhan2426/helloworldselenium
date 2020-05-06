@@ -75,7 +75,7 @@ public class LogInPage extends BasePage {
         Thread.sleep(1000);
         String validationString = validationStringElement.getText();
         Assert.assertEquals(validationString, expectedString);
-        //clickOnElement(logoutLink);
+        clickOnElement(logoutLink);
 
 
     }

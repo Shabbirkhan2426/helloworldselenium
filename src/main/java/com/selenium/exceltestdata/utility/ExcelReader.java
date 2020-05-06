@@ -7,11 +7,65 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ExcelReader {
 
-    public static void main(String[] args) throws IOException {
+    public static String[][] exclReader() throws IOException {
+
+        String filePath = "/Users/shabbirkhan/Desktop/ExcelRead.xlsx";
+        File file = new File(filePath);
+
+        FileInputStream fi = new FileInputStream(file);
+        XSSFWorkbook workbook = new XSSFWorkbook(fi);
+        XSSFSheet sheet0 = workbook.getSheetAt(0);
+        int rowNum = sheet0.getLastRowNum();
+        int cellNum = sheet0.getRow(0).getLastCellNum();
+
+        String[][] excelArray = new String[rowNum][cellNum];
+
+        for (int i = 1; i <= rowNum; i++) {
+
+            Row row = sheet0.getRow(i);
+
+            for (int j = 0; j < cellNum; j++) {
+
+                Cell cell = row.getCell(j);
+
+                excelArray[i - 1][j] = cell.getStringCellValue();
+            }
+        }
+
+
+
+        XSSFSheet sheet1 = workbook.getSheetAt(1);
+        int rowNum1 = sheet0.getLastRowNum();
+        int cellNum1 = sheet0.getRow(0).getLastCellNum();
+
+        String[][] excelArray1 = new String[rowNum][cellNum];
+
+        for (int i = 1; i <= rowNum; i++) {
+
+            Row row = sheet0.getRow(i);
+
+            for (int j = 0; j < cellNum; j++) {
+
+                Cell cell = row.getCell(j);
+
+                excelArray[i - 1][j] = cell.getStringCellValue();
+            }
+        }
+
+        return excelArray;
+
+    }
+
+}
+
+
+
+   /* public static void main(String[] args) throws IOException {
 
         String filePath ="/Users/shabbirkhan/Desktop/Testdata.xlsx";
         File file = new File(filePath);
@@ -42,5 +96,7 @@ public class ExcelReader {
         int cellCount = sheet0.getRow(0).getPhysicalNumberOfCells();
         System.out.println(cellCount);
 
-    }
-}
+
+
+    }*/
+

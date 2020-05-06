@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class ShippingInfoTestPage extends BaseTestClass {
 
-    @Parameters({"emailID", "password"})
-    @Test(priority = 1)
+    
+    @Test(dataProvider = "shabbir")
     public void homeTest(String paraID, String paraPass)throws Exception{
 
         System.out.println("Verification item: ============");
@@ -24,7 +24,7 @@ public class ShippingInfoTestPage extends BaseTestClass {
 
     }
 
-    @Test(priority = 3)
+    @Test(dataProvider = "Shabbir1")
     public void shippingTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");

@@ -7,8 +7,7 @@ public class LogInPageTest extends BaseTestClass {
 
 
 
-    @Parameters({"emailID", "password"})
-    @Test
+    @Test(dataProvider = "shabbir")
     public void loginTest(String paraID, String paraPass) throws Exception {
 
         System.out.println("Login Page Verification items:    ==========");
@@ -21,7 +20,7 @@ public class LogInPageTest extends BaseTestClass {
 
 
 }
-
+//@Parameters({"emailID", "password"})
 
     /*@Test
     public void loginTest(String paraID, String paraPass) throws Exception {
