@@ -61,7 +61,6 @@ public class BaseTestClass {
 
     @DataProvider(name="shabbir")
     public Object [][] excelData () throws IOException {
-
         Object [][] arrayData = exclReader();
         return arrayData;
     }

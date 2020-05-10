@@ -3,9 +3,9 @@ package com.shabbir.aprilhw.pageObject;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ShippingInfoTestPage extends BaseTestClass {
+public class ShippingInfoTest extends BaseTestClass {
 
-    
+
     @Test(dataProvider = "shabbir")
     public void homeTest(String paraID, String paraPass)throws Exception{
 
@@ -14,8 +14,8 @@ public class ShippingInfoTestPage extends BaseTestClass {
         System.out.println("========= Assertion Passed ======");
 
     }
-
-    @Test(priority = 2)
+    @Test(dependsOnMethods = "homeTest")
+    //@Test(priority = 2)
     public void addproducttoCardTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
@@ -24,7 +24,9 @@ public class ShippingInfoTestPage extends BaseTestClass {
 
     }
 
-    @Test(dataProvider = "Shabbir1")
+    @Test(dependsOnMethods = "addproducttoCardTest",dataProvider = "Shabbir1")
+   // @Test(dataProvider = "Shabbir1")
+
     public void shippingTest() throws InterruptedException {
 
         System.out.println("Verification item: ============");
