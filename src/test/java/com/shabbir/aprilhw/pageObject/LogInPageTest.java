@@ -1,9 +1,8 @@
 package com.shabbir.aprilhw.pageObject;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LogInPageTest extends BaseTestClass {
+public class LogInPageTest extends BaseTest {
 
 
 

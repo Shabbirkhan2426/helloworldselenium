@@ -3,7 +3,7 @@ package com.shabbir.aprilhw.pageObject;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class HomePageTest extends BaseTestClass {
+public class HomePageTest extends BaseTest {
 
     @Parameters({"emailID", "password"})
     @Test(priority = 1)

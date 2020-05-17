@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.selenium.exceltestdata.utility.ExcelReader.exclReader;
 
-public class BaseTestClass {
+public class BaseTest {
 
     protected LogInPage logInPage;
     protected HomePage homePage;

@@ -1,9 +1,8 @@
 package com.shabbir.aprilhw.pageObject;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ShippingInfoTest extends BaseTestClass {
+public class ShippingInfoTest extends BaseTest {
 
 
     @Test(dataProvider = "shabbir")

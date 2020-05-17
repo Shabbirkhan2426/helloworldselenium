@@ -13,7 +13,7 @@
             <class name="com.shabbir.aprilhw.pageObject.LogInPageTest" />
             <class name="com.shabbir.aprilhw.pageObject.HomePageTest" />
             <class name="com.shabbir.aprilhw.pageObject.ShippingInfoTest" />
-           <class name="com.shabbir.aprilhw.pageObject.CheckOutTestPage" />
+           <class name="com.shabbir.aprilhw.pageObject.CheckOutTest" />
 
 
         </classes>

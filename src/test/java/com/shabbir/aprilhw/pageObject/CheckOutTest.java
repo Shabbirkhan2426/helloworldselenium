@@ -3,7 +3,7 @@ package com.shabbir.aprilhw.pageObject;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class CheckOutTestPage extends BaseTestClass{
+public class CheckOutTest extends BaseTest {
     @Parameters({"emailID", "password"})
     @Test(priority = 1)
     public void homeTest(String paraID, String paraPass)throws Exception{
